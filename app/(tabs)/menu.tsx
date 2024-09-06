@@ -1,32 +1,32 @@
 import { MenuItem } from '@/components/MenuItem';
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
 
 const Menu = () => {
   return (
     <SafeAreaView>
       <View style={styles.titleContainer}>
-        <Text style={{ fontSize: 24 }}>Menu</Text>
+        <ThemedText style={{ fontSize: 24 }}>Menu</ThemedText>
       </View>
-      <View style={styles.container}>
-        <MenuItem title="Add a Guest" startIcon="people" />
+      <ThemedView style={styles.container}>
+        <MenuItem title="Add a Guest" startIcon="people" isFirstItem={true} />
         <MenuItem title="View Lists" startIcon="list" />
         <MenuItem title="Settings" startIcon="cog" isLastItem={true} />
-      </View>
+      </ThemedView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   titleContainer: {
+    margin: 8,
     display: 'flex',
     alignItems: 'center',
   },
   container: {
-    margin: 4,
-    borderWidth: 0.5,
-    borderColor: 'lightgrey',
-    borderRadius: 4,
-    backgroundColor: 'white',
+    margin: 8,
+    borderRadius: 8,
   },
 });
 
